@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Plasma Donar App</title>
+  <title>Nutrition App</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -51,51 +51,28 @@
 		
 </style>
 <body>
-
+	
 <div class="container-fluid">
 <div class="header">
-<div><b>Plasma Donar App</b></div>
+<div><b>Nutrition App</b></div>
 <ul>
-		<li><a href="/requester">Request</a></li>
+		<li><a href="/upload">Upload Image</a></li>
 		<li><a class="active" href="/login">Home</a></li>
 	</ul>
 </div>
   <br>
-  <div class="big">
-    <div class="box">
-		<div class="ext1"><font size="20px">{{b}}</font><br><b>Donors</b></div>
-	</div>
-  </div>
   <br>
+	
   <div class="row">
+	{% for row in rows %}
     <div class="col" >
-		<div class="ext">{{b1}}<br><b>O Positive</b></div>
+		<div class="ext">
+			<a href="/connect_api"><img src='static/{{ row[1] }}' width="500" height="300"/></a>
+		</div>
 	</div>
-    <div class="col" >
-		<div class="ext">{{b2}}<br><b>A Positive</b></div>
-	</div>
-    <div class="col" >
-		<div class="ext">{{b3}}<br><b>B Positive</b></div>
-	</div>
-    <div class="col" >
-		<div class="ext">{{b4}}<br><b>AB Positive</b></div>
-	</div>
+	{% endfor %}
   </div>
-  <br>
-  <div class="row">
-    <div class="col" >
-		<div class="ext">{{b5}}<br><b>O Negative</b></div>
-	</div>
-    <div class="col" >
-		<div class="ext">{{b6}}<br><b>A Negative</b></div>
-	</div>
-    <div class="col" >
-		<div class="ext">{{b7}}<br><b>B Negative</b></div>
-	</div>
-    <div class="col" >
-		<div class="ext">{{b8}}<br><b>AB Negative</b></div>
-	</div>
-  </div>
+
 </div>
 </body>
 </html>
